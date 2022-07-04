@@ -1,56 +1,40 @@
-import Button from "./Button";
+import Title from './Title';
+import Noticia from './Noticia';
 import "./App.css"
-function App(){
-  const palavras_chave = [
-    {button1: "linux"}, 
-    {button1: "docker"}, 
-    {button1: "server"},
-    {button1: "rails"},
-    {button1: "douane"},
-    {button1: "my-developments"}, 
-    {button1: "command-line"},
-    {button1: "ruby"},
-    {button1: "c-2"},
-    {button1: "linux-on-mac"}, 
-    {button1: "maintenance"}, 
-    {button1: "security"},
-    {button1: "gnome"},
-    {button1: "kubernetes"},
-    {button1: "mes-developpements"},
-    {button1: "ubuntu"},
-    {button1: "python"},
-    {button1: "vcs"},
-    {button1: "capybara"},
-    {button1: "contribution"},
-    {button1: "git"},
-    {button1: "apt"},
-    {button1: "bazaar"},
-    {button1: "chef"},
-    {button1: "cucumber"}, 
-    {button1: "debian"},
-    {button1: "game"},
-    {button1: "howto"},
-    {button1: "packaging"},
-    {button1: "testing"},
-    {button1: "boost"},
-    {button1: "debug"},
-    {button1: "devise"},
-    {button1: "elixir"},
-    {button1: "gtk"},
-    {button1: "homebrew"},
-    {button1: "information"},
-    {button1: "ssh"},
-    {button1: "tuxtremsplit"},
-    {button1: "xpath"}
-  ]
+function App() {
 
-  return (
-    <div className="pai">
-      {palavras_chave.map((button) => {
-        return <Button button1={button.button1}/> 
-      })
-      }
+    const lista_noticias = [
+      {
+        numero:"noticia 1",
+        description: "Funcionária que denunciou procurador diz que agressor 'desprezava mulheres' e teme sair na rua;'Muito medo'"
+      },
+      {
+        numero: "noticia 2",
+        description: "Imposto de Renda 2022: Receita abre consultas ao 2° lote de restituição nesta quinta; veja se você está no grupo"
+      },
+      {
+        numero: "noticia 3",
+        description: "Governo opera para evitar CPI do MEC, que ganhou força após prisão de Milton Ribeiro"
+      },
+      {
+        numero: "noticia 4",
+        description: "Em Itajubá, assaltantes armados atacam agência da Caixa Econômica Federal; 7 ficam feridos"
+      },{
+        numero: "5",
+        description: "Almir Sater é 'parado em blitz' e policiais tietam cantor: 'o senhor é o dono dessa chalana?'"
+      },
+    ];
+
+  return(
+    <div className='container'>
+      <Title />
+      
+      { lista_noticias.map( (noticia) => {
+        return <Noticia numeral={noticia.numero} desc={noticia.description}/>
+      } ) }
     </div>
-  )
+    
+  );
 }
+
 export default App;
